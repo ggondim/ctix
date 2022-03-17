@@ -131,7 +131,7 @@ async function createDefaultExportContents({
       fpRefineStartSlash,
       fpAddDotPath,
     )(replaced);
-    const refinedAlias = TFU.flow(fpRemoveExtWithTSX)(replaced);
+    const refinedAlias = TFU.flow(fpRemoveExtWithTSX)(replaced).split('/').slice(-1)[0];
 
     const defaultExportFileContent = `export { default as ${refinedAlias} } from ${quote}${refined}${quote}`;
 
