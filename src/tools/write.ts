@@ -131,11 +131,9 @@ async function createDefaultExportContents({
       fpRefineStartSlash,
       fpAddDotPath,
     )(replaced);
-    const refinedAlias = TFU.flow(fpRefinePathSep, fpRemoveExtWithTSX)(replaced);
+    const refinedAlias = TFU.flow(fpRemoveExtWithTSX)(replaced);
 
-    const defaultExportFileContent = `export { default as ${camelCase(
-      refinedAlias,
-    )} } from ${quote}${refined}${quote}`;
+    const defaultExportFileContent = `export { default as ${refinedAlias} } from ${quote}${refined}${quote}`;
 
     return { dirname: await getDirname(filename), content: defaultExportFileContent };
   } catch (catched) {
