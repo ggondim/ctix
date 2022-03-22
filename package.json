@@ -1,6 +1,6 @@
 {
   "name": "@ggondim/ctix",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Automatic create index.ts file",
   "main": "dist/cti.js",
   "scripts": {
